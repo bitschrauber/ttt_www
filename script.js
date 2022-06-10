@@ -1,5 +1,5 @@
 /**
- * 
+ * bitschrauber 2022
  */
 let player = 1
 
