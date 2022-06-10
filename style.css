@@ -3,7 +3,10 @@ body {
 }
 
 #player {
-    color: red
+    color: red;
+    font-size: 60px;
+   	text-align: center;
+   	padding: 10px;
 }
 
 .field {
