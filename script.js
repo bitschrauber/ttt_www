@@ -13,9 +13,9 @@ btns.forEach ((btn)=>{
 
 let player = 1
 
-function isEmptyField(e){
+function isMarkedField(e){
 	//console.log(e)
-	return !((e=="X")||(e=="O"));
+	return ((e=="X")||(e=="O"));
 }
 
 function setMark(player){
@@ -31,7 +31,7 @@ function announcePlayer(player){
 }
 
 function btnClicked(){	
-	if (!isEmptyField(this.innerHTML)){return;}
+	if (isMarkedField(this.innerHTML)){return;}
 	this.innerHTML=setMark(player);
 	player=togglePlayer(player);
 	announcePlayer(player);
