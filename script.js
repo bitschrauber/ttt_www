@@ -3,7 +3,7 @@
  */
 //console.log("Entered script");
  
-btns = document.querySelectorAll("button");
+btns = document.querySelectorAll(".square");
 //console.log(btns.length);
 
 btns.forEach ((btn)=>{
@@ -14,7 +14,7 @@ btns.forEach ((btn)=>{
 let player = 1
 
 function isEmptyField(e){
-	console.log(e)
+	//console.log(e)
 	return !((e=="X")||(e=="O"));
 }
 
@@ -23,7 +23,7 @@ function setMark(player){
 }
 
 function togglePlayer(player){
-	player=(player==1?player=2:player=1);
+	return (player==1?2:1);
 }
 
 function announcePlayer(player){
@@ -31,9 +31,8 @@ function announcePlayer(player){
 }
 
 function btnClicked(){	
-	if (isEmptyField(this.innerHTML)){
-		this.innerHTML=setMark(player);
-		togglePlayer(player);
-		announcePlayer(player)
-	} else {return}
+	if (!isEmptyField(this.innerHTML)){return;}
+	this.innerHTML=setMark(player);
+	player=togglePlayer(player);
+	announcePlayer(player);
 }
